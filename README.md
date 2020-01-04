@@ -37,7 +37,7 @@ import { CheckboxInput } from './formFields/checkboxInput/CheckboxInput'
 
 
 ### CheckboxGroupInput
-Takes 3 props; label, items, and setItems. items and setItems should be useState() states. Also, items must have a name and a selected value. 
+Takes 3 props; items, setItems, and an optional label. items and setItems should be useState() states. Also, the items objects must each have a name and a selected value. 
 ```jsx
 interface ItemsInterface {
     name: string;
