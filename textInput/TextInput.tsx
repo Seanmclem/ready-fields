@@ -29,7 +29,7 @@ export const TextInput = (props: ITextInputProps) => {
                 value={text}
             />
             {error ? (
-                <label className="error">{error}</label>
+                <span className="error">{error}</span>
             ) : null}
         </div>
     )
