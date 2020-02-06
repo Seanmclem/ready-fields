@@ -1,25 +1,25 @@
 import React from 'react'
-import './CheckboxGroupInput.scss'
+import './RadioGroupInput.scss'
 
 interface ItemsInterface {
     name: string;
     selected: boolean;
 }
 
-interface ICheckboxListProps {
+interface IRadioGroupInputProps {
     label?: string;
     items: Array<ItemsInterface>;
-    setItems: any;
+    setItems?: any;
+    setSelectedItem: any;
 }
 
-export const CheckboxGroupInput = ({ label, items, setItems }: ICheckboxListProps) => {
+export const RadioGroupInput = ({ label, items, setItems, setSelectedItem }: IRadioGroupInputProps) => {
     const handleChange = (event: any, name: string) => {
-        const newArray = [...items]
-        const itemIndex = newArray.findIndex((item) => item.name === name)
-        let item = { ...newArray[itemIndex] }
-        item.selected = event.target.checked
-        newArray[itemIndex] = item
+        const newArray = items.map(item => (name !== item.name ? { ...item, selected: false } : { ...item, selected: true }))
+        debugger;
         setItems(newArray)
+        const selectedItemIndex = newArray.findIndex((item) => item.name === name)
+        setSelectedItem(items[selectedItemIndex]?.name)
     }
 
     return (
@@ -33,7 +33,8 @@ export const CheckboxGroupInput = ({ label, items, setItems }: ICheckboxListProp
                         <input
                             id={`size-${item.name}`}
                             name={`size-${item.name}`}
-                            type="checkbox"
+                            type="radio"
+                            value={item.name}
                             checked={item.selected}
                             onChange={(e) => handleChange(e, item.name)} />
                         <label htmlFor={`size-${item.name}`}>
