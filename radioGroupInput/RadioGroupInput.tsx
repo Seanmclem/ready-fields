@@ -16,7 +16,6 @@ interface IRadioGroupInputProps {
 export const RadioGroupInput = ({ label, items, setItems, setSelectedItem }: IRadioGroupInputProps) => {
     const handleChange = (event: any, name: string) => {
         const newArray = items.map(item => (name !== item.name ? { ...item, selected: false } : { ...item, selected: true }))
-        debugger;
         setItems(newArray)
         const selectedItemIndex = newArray.findIndex((item) => item.name === name)
         setSelectedItem(items[selectedItemIndex]?.name)
