@@ -6,5 +6,5 @@ interface IErrorSingleProps {
 }
 
 export const ErrorSingle = ({ error }: IErrorSingleProps) => (
-    <span className='error-single'>{error}</span>
+    <span className={`error-single${error ? ' shown' : ''}`}>{error}</span>
 )
