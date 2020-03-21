@@ -6,10 +6,12 @@ interface ITextInputProps {
     label?: string;
     text: string;
     setText: any;
+    type?: string;
+    error?: string;
 }
 
 export const TextInput = (props: ITextInputProps) => {
-    const { name, label, text, setText } = { ...props }
+    const { name, label, text, setText, type = '', error = '' } = { ...props }
 
     const handleChange = (event: any) => {
         setText(event.target.value);
@@ -22,17 +24,13 @@ export const TextInput = (props: ITextInputProps) => {
             ) : null}
             <input
                 name={name}
-                type="text"
+                type={type || 'text'}
                 onChange={handleChange}
                 value={text}
             />
+            {error ? (
+                <span className="error">{error}</span>
+            ) : null}
         </div>
     )
 }
-
-// const [error, setError] = React.useState(null);
-// {error && (
-//     <label style={{ color: "red" }} htmlFor="message">
-//         {error}
-//     </label>
-// )}
