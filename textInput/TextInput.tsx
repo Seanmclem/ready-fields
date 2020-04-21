@@ -8,10 +8,10 @@ interface ITextInputProps {
     setText: any;
     type?: string;
     error?: string;
+    placeholder?: string;
 }
 
-export const TextInput = (props: ITextInputProps) => {
-    const { name, label, text, setText, type = '', error = '' } = { ...props }
+export const TextInput: React.FC<ITextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
 
     const handleChange = (event: any) => {
         setText(event.target.value);
@@ -27,6 +27,7 @@ export const TextInput = (props: ITextInputProps) => {
                 type={type || 'text'}
                 onChange={handleChange}
                 value={text}
+                placeholder={placeholder}
             />
             {error ? (
                 <span className="error">{error}</span>
