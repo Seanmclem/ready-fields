@@ -1,5 +1,5 @@
 import React from 'react'
-import './ErrorsList.scss'
+import './ErrorsList.css'
 
 interface IErrorsListProps {
     errors: Array<string>;

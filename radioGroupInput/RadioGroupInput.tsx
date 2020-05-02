@@ -1,5 +1,4 @@
 import React from 'react'
-import './RadioGroupInput.scss'
 
 interface ItemsInterface {
     name: string;

@@ -1,5 +1,5 @@
 import React from 'react'
-import './TextInput.scss'
+import './TextInput.css'
 
 interface ITextInputProps {
     name: string;

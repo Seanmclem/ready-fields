@@ -1,5 +1,4 @@
 import React from 'react'
-import './CheckboxInput.scss'
 
 interface ICheckboxInputProps {
     name: string;

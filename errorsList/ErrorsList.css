@@ -1,0 +1,8 @@
+.errors-list {
+  list-style: none;
+}
+
+.errors-list li {
+  color: red;
+  font-weight: bold;
+}

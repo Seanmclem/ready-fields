@@ -1,5 +1,4 @@
 import React from 'react'
-import './CheckboxGroupInput.scss'
 
 interface ItemsInterface {
     name: string;

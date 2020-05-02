@@ -1,5 +1,5 @@
 import React from 'react'
-import './ErrorSingle.scss'
+import './ErrorSingle.css'
 
 interface IErrorSingleProps {
     error: string;

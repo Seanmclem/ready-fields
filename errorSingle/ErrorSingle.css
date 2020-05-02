@@ -10,10 +10,10 @@
   max-width: 250px;
   width: 80%;
   color: darkred;
+}
 
-  &.shown {
-    height: auto;
-    min-height: 40px;
-    justify-content: center;
-  }
+.error-single.shown {
+  height: auto;
+  min-height: 40px;
+  justify-content: center; 
 }
