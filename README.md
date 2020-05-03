@@ -6,13 +6,16 @@
 
 ## TextInput
 
-Takes 4 props; name, text, setText, and an optional label. text and setText should be useState() states.
+Takes up to 7 props; name, text, setText, and optional type, error, placeholder, label. text and setText should be useState() states.
 ```jsx
 interface ITextInputProps {
     name: string;
     label?: string;
     text: string;
     setText: any;
+    type?: string; // default = 'text'
+    error?: string;
+    placeholder?: string;
 }
 ```
 
