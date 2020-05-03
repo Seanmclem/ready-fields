@@ -1,46 +1,36 @@
 import React from 'react'
+import { IRadioGroupInputProps, ItemsInterface } from '../types'
 
-interface ItemsInterface {
-    name: string;
-    selected: boolean;
-}
+export const RadioGroupInput: React.FC<IRadioGroupInputProps>
+    = ({ label, items, setItems, setSelectedItem }) => {
+        const handleChange = (event: any, name: string) => {
+            const newArray = items.map(item => (name !== item.name ? { ...item, selected: false } : { ...item, selected: true }))
+            setItems(newArray)
+            const selectedItemIndex = newArray.findIndex((item: ItemsInterface) => item.name === name)
+            setSelectedItem(items[selectedItemIndex]?.name)
+        }
 
-interface IRadioGroupInputProps {
-    label?: string;
-    items: Array<ItemsInterface>;
-    setItems?: any;
-    setSelectedItem: any;
-}
-
-export const RadioGroupInput = ({ label, items, setItems, setSelectedItem }: IRadioGroupInputProps) => {
-    const handleChange = (event: any, name: string) => {
-        const newArray = items.map(item => (name !== item.name ? { ...item, selected: false } : { ...item, selected: true }))
-        setItems(newArray)
-        const selectedItemIndex = newArray.findIndex((item) => item.name === name)
-        setSelectedItem(items[selectedItemIndex]?.name)
+        return (
+            <div className="checkbox-group-label-container">
+                {label ? (
+                    <label>{label}</label>
+                ) : null}
+                <ul>
+                    {items.map((item: ItemsInterface) => (
+                        <li key={item.name}>
+                            <input
+                                id={`size-${item.name}`}
+                                name={`size-${item.name}`}
+                                type="radio"
+                                value={item.name}
+                                checked={item.selected}
+                                onChange={(e) => handleChange(e, item.name)} />
+                            <label htmlFor={`size-${item.name}`}>
+                                {item.name}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
     }
-
-    return (
-        <div className="checkbox-group-label-container">
-            {label ? (
-                <label>{label}</label>
-            ) : null}
-            <ul>
-                {items.map(item => (
-                    <li key={item.name}>
-                        <input
-                            id={`size-${item.name}`}
-                            name={`size-${item.name}`}
-                            type="radio"
-                            value={item.name}
-                            checked={item.selected}
-                            onChange={(e) => handleChange(e, item.name)} />
-                        <label htmlFor={`size-${item.name}`}>
-                            {item.name}
-                        </label>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-}

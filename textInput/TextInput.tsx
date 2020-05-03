@@ -1,15 +1,6 @@
 import React from 'react'
 import './TextInput.css'
-
-interface ITextInputProps {
-    name: string;
-    label?: string;
-    text: string;
-    setText: any;
-    type?: string;
-    error?: string;
-    placeholder?: string;
-}
+import { ITextInputProps } from '../types';
 
 export const TextInput: React.FC<ITextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
 

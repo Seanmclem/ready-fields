@@ -1,11 +1,8 @@
 import React from 'react'
 import './ErrorsList.css'
+import { IErrorsListProps } from '../types'
 
-interface IErrorsListProps {
-    errors: Array<string>;
-}
-
-export const ErrorsList = ({ errors }: IErrorsListProps) => (
+export const ErrorsList: React.FC<IErrorsListProps> = ({ errors }) => (
     errors.length > 0 ? (
         <ul className="errors-list">
             {errors.map(error => (
