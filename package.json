@@ -1,6 +1,6 @@
 {
   "name": "ready-fields",
-  "version": "0.8.12",
+  "version": "0.8.13",
   "description": "Takes 4 props; name, text, setText, and an optional label. text and setText should be useState() states. ```jsx interface ITextInputProps {     name: string;     label?: string;     text: string;     setText: any; } ```",
   "main": "index.js",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Seanmclem/react-form-fields.git"
+    "url": "git+https://github.com/Seanmclem/ready-fields.git"
   },
   "author": "seanmclem",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Seanmclem/react-form-fields/issues"
+    "url": "https://github.com/Seanmclem/ready-fields/issues"
   },
-  "homepage": "https://github.com/Seanmclem/react-form-fields#readme",
+  "homepage": "https://github.com/Seanmclem/ready-fields#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
