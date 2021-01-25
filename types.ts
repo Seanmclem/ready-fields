@@ -8,16 +8,17 @@ export interface ITextInputProps {
     placeholder?: string;
 }
 
-export interface ItemsInterface {
+export interface ItemInterface {
     name: string;
     selected: boolean;
+    data?: any;
 }
 
 export interface IRadioGroupInputProps {
     label?: string;
-    items: Array<ItemsInterface>;
-    setItems?: any;
-    setSelectedItem: any;
+    items: ItemInterface[];
+    setItems?: (items: ItemInterface[]) => void;
+    setSelectedItem: (itemName: string) => void;
 }
 
 export interface IErrorsListProps {
@@ -32,16 +33,11 @@ export interface IErrorSingleProps {
 export interface ICheckboxInputProps {
     name: string;
     selected: boolean;
-    setSelected: any;
-}
-
-export interface ItemsInterface {
-    name: string;
-    selected: boolean;
+    setSelected: (arg: boolean) => void;
 }
 
 export interface ICheckboxListProps {
     label?: string;
-    items: Array<ItemsInterface>;
-    setItems: any;
+    items: ItemInterface[];
+    setItems: (items: ItemInterface[]) => void;
 }

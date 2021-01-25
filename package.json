@@ -1,6 +1,6 @@
 {
   "name": "ready-fields",
-  "version": "0.8.13",
+  "version": "0.8.14",
   "description": "Takes 4 props; name, text, setText, and an optional label. text and setText should be useState() states. ```jsx interface ITextInputProps {     name: string;     label?: string;     text: string;     setText: any; } ```",
   "main": "index.js",
   "scripts": {

@@ -22,7 +22,7 @@ interface ITextInputProps {
 ### Usage
 
 ```jsx
-import { TextInput } from './formFields/textInput/TextInput'
+import { TextInput } from 'ready-fields'
 
 <TextInput label="Title" name="title" text={title} setText={setTitle} />
 ```
@@ -41,7 +41,7 @@ interface ICheckboxInputProps {
 
 ### Usage
 ```jsx
-import { CheckboxInput } from './formFields/checkboxInput/CheckboxInput'
+import { CheckboxInput } from 'ready-fields'
 
 <CheckboxInput name="IsOriginal?" selected={isOriginal} setSelected={setIsOriginal} />
 ```
@@ -53,21 +53,21 @@ import { CheckboxInput } from './formFields/checkboxInput/CheckboxInput'
 Takes 3 props; items, setItems, and an optional label. items and setItems should be useState() states. Also, the items objects must each have a name and a selected value. 
 
 ```jsx
-interface ItemsInterface {
+interface ItemInterface {
     name: string;
     selected: boolean;
 }
 
 interface ICheckboxListProps {
     label?: string;
-    items: Array<ItemsInterface>;
+    items: Array<ItemInterface>;
     setItems: any;
 }
 ```
 
 ### Usage
 ```jsx
-import { CheckboxGroupInput } from './formFields/checkboxGroupInput/CheckboxGroupInput'
+import { CheckboxGroupInput } from 'ready-fields'
 
 <CheckboxGroupInput items={printSizes} setItems={setPrintSizes} label="Available Sizes" />
 ```
@@ -77,14 +77,14 @@ import { CheckboxGroupInput } from './formFields/checkboxGroupInput/CheckboxGrou
 ## RadioGroupInput
 Takes 3 or 4 props; items, setSelectedItem, and optional setItems, and an optional label. setSelectedItem, items, and setItems should be useState() states. Also, the items objects must each have a name and a selected value. 
 ```jsx
-interface ItemsInterface {
+interface ItemInterface {
     name: string;
     selected: boolean;
 }
 
 interface IRadioGroupInputProps {
     label?: string;
-    items: Array<ItemsInterface>;
+    items: Array<ItemInterface>;
     setItems?: any;
     setSelectedItem: any;
 }
@@ -92,7 +92,7 @@ interface IRadioGroupInputProps {
 
 ### Usage
 ```jsx
-import { CheckboxGroupInput } from './formFields/checkboxGroupInput/CheckboxGroupInput'
+import { CheckboxGroupInput } from 'ready-fields'
 
 <RadioGroupInput 
     items={printSizes}
