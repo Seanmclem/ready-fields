@@ -1,3 +1,5 @@
-node_modules/*
-index.js
-stats.html
+*.log
+.DS_Store
+node_modules
+.cache
+dist

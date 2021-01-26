@@ -1,7 +1,12 @@
-import React from 'react'
-import { ICheckboxInputProps } from '../types'
+import React, { FC } from 'react'
 
-export const CheckboxInput: React.FC<ICheckboxInputProps>
+export interface ICheckboxInputProps {
+    name: string;
+    selected: boolean;
+    setSelected: (arg: boolean) => void;
+}
+
+export const CheckboxInput: FC<ICheckboxInputProps>
     = ({ name, selected, setSelected }) => {
 
         const handleChange = (event: any, setSelected: any) => {

@@ -1,46 +1,76 @@
 {
-  "name": "ready-fields",
-  "version": "0.8.14",
-  "description": "Takes 4 props; name, text, setText, and an optional label. text and setText should be useState() states. ```jsx interface ITextInputProps {     name: string;     label?: string;     text: string;     setText: any; } ```",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c --environment production",
-    "deploy": "npm publish --access public",
-    "build-deploy": "rollup -c --environment production && npm publish --access public"
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
   },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "ready-fields",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Seanmclem/ready-fields.git"
   },
   "author": "seanmclem",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Seanmclem/ready-fields/issues"
-  },
-  "homepage": "https://github.com/Seanmclem/ready-fields#readme",
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
+  "module": "dist/ready-fields.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/ready-fields.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/ready-fields.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "devDependencies": {
-    "@types/react": "^16.9.34",
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "@rollup/plugin-babel": "^5.0.0",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-image": "^2.0.4",
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "@rollup/plugin-typescript": "^4.1.1",
-    "react": "^16.13.1",
-    "rollup": "^2.7.6",
-    "rollup-plugin-peer-deps-external": "^2.2.2",
-    "rollup-plugin-postcss": "^3.1.1",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-visualizer": "^4.0.4",
-    "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "@babel/core": "^7.12.10",
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/addons": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "husky": "^4.3.8",
+    "postcss": "^8.2.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "rollup-plugin-postcss": "^4.0.0",
+    "size-limit": "^4.9.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3"
   }
 }

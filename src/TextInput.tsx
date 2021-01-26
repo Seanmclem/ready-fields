@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './TextInput.css'
-import { ITextInputProps } from '../types';
 
-export const TextInput: React.FC<ITextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
+export interface ITextInputProps {
+    name: string;
+    text: string;
+    setText: any;
+    label?: string;
+    type?: string;
+    error?: string;
+    placeholder?: string;
+}
+
+export const TextInput: FC<ITextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
 
     const handleChange = (event: any) => {
         setText(event.target.value);
@@ -11,7 +20,7 @@ export const TextInput: React.FC<ITextInputProps> = ({ name, label, text, setTex
     return (
         <div className="input-label-container">
             {label ? (
-                <label>{label}</label>
+                <label htmlFor={name}>{label}</label>
             ) : null}
             <input
                 name={name}
