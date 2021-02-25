@@ -8,7 +8,7 @@
 
 Takes up to 7 props; name, text, setText, and optional type, error, placeholder, label. text and setText should be useState() states.
 ```jsx
-interface ITextInputProps {
+interface TextInputProps {
     name: string;
     label?: string;
     text: string;
@@ -32,7 +32,7 @@ import { TextInput } from 'ready-fields'
 ## CheckboxInput
 Takes 3 props; name, selected, and setSelected. selected and setSelected should be useState() states.
 ```jsx
-interface ICheckboxInputProps {
+interface CheckboxInputProps {
     name: string;
     selected: boolean;
     setSelected: any;

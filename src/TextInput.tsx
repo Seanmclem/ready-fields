@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import './TextInput.css'
 
-export interface ITextInputProps {
+export interface TextInputProps {
     name: string;
     text: string;
     setText: any;
@@ -11,7 +11,7 @@ export interface ITextInputProps {
     placeholder?: string;
 }
 
-export const TextInput: FC<ITextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
+export const TextInput: FC<TextInputProps> = ({ name, label, text, setText, type = '', error = '', placeholder = '' }) => {
 
     const handleChange = (event: any) => {
         setText(event.target.value);
