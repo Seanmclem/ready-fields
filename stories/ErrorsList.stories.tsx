@@ -26,4 +26,10 @@ const Template: Story<ErrorsListProps> = args => <ErrorsList {...args}/>;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  errors: [
+    "Error one",
+    "Another error 2",
+    "Yeah yeah"
+  ]
+} as ErrorsListProps;

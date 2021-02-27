@@ -1,13 +1,13 @@
 import React from 'react'
 import { ItemInterface } from './common'
 
-export interface ICheckboxListProps {
+export interface CheckboxGroupProps {
     label?: string;
     items: ItemInterface[];
     setItems: (items: ItemInterface[]) => void;
 }
 
-export const CheckboxGroupInput: React.FC<ICheckboxListProps>
+export const CheckboxGroupInput: React.FC<CheckboxGroupProps>
     = ({ label, items, setItems }) => {
         const handleChange = (event: any, name: string) => {
             const newArray = [...items]
@@ -24,7 +24,7 @@ export const CheckboxGroupInput: React.FC<ICheckboxListProps>
                     <label>{label}</label>
                 ) : null}
                 <ul>
-                    {items.map(item => (
+                    {items?.map(item => (
                         <li key={item.name}>
                             <input
                                 id={`checkbox-${item.name}`}

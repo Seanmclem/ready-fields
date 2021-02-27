@@ -58,7 +58,7 @@ interface ItemInterface {
     selected: boolean;
 }
 
-interface ICheckboxListProps {
+interface CheckboxGroupProps {
     label?: string;
     items: Array<ItemInterface>;
     setItems: any;

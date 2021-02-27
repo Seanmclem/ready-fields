@@ -26,4 +26,6 @@ const Template: Story<ErrorSingleProps> = args => <ErrorSingle {...args}/>;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  error: "Generic simple error"
+} as ErrorSingleProps;
