@@ -35,3 +35,9 @@ export const TextInput: FC<TextInputProps> = ({ name, label, text, setText, type
         </div>
     )
 }
+
+// const Template: Story<Props> = args => <Thing {...args}/>;
+// const FishTemplate: Story<Props> = args => <Thing {...args}>fish</Thing>;
+
+// export const Default = Template.bind({});
+// export const Fish = Fish

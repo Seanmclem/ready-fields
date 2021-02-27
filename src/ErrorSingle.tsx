@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 import './ErrorSingle.css'
 
-export interface IErrorSingleProps {
+export interface ErrorSingleProps {
     error: string;
+    // styles?: any;
 }
 
-export const ErrorSingle: FC<IErrorSingleProps> = ({ error }) => (
+export const ErrorSingle: FC<ErrorSingleProps> = ({ error }) => (
     <span className={`error-single${error ? ' shown' : ''}`}>{error}</span>
 )
