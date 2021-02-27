@@ -1,4 +1,3 @@
-export * from './Thing';
 export * from './CheckboxGroupInput';
 export * from './CheckboxInput';
 export * from './ErrorSingle';
