@@ -9,7 +9,6 @@ export interface TextInputProps {
   type?: string;
   error?: string;
   placeholder?: string;
-  style: any;
 }
 
 export const TextInput: FC<TextInputProps> = ({
@@ -20,7 +19,6 @@ export const TextInput: FC<TextInputProps> = ({
   type = '',
   error = '',
   placeholder = '',
-  style = {}
 }) => {
   const handleChange = (event: any) => {
     setText(event.target.value);
@@ -29,7 +27,6 @@ export const TextInput: FC<TextInputProps> = ({
   return (
     <div
         className="input-label-container"
-        style={style}
     >
       {label ? <label htmlFor={name}>{label}</label> : null}
       <input
