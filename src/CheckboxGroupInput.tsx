@@ -27,12 +27,12 @@ export const CheckboxGroupInput: React.FC<ICheckboxListProps>
                     {items.map(item => (
                         <li key={item.name}>
                             <input
-                                id={`size-${item.name}`}
-                                name={`size-${item.name}`}
+                                id={`checkbox-${item.name}`}
+                                name={`checkbox-${item.name}`}
                                 type="checkbox"
                                 checked={item.selected}
                                 onChange={(e) => handleChange(e, item.name)} />
-                            <label htmlFor={`size-${item.name}`}>
+                            <label htmlFor={`checkbox-${item.name}`}>
                                 {item.name}
                             </label>
                         </li>

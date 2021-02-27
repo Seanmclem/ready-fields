@@ -16,12 +16,12 @@ export const CheckboxInput: FC<CheckboxInputProps>
         return (
             <div className="checkbox-label-container">
                 <input
-                    id={`size-${name}`}
-                    name={`size-${name}`}
+                    id={`checkbox-${name}`}
+                    name={`checkbox-${name}`}
                     type="checkbox"
                     checked={selected}
                     onChange={(e) => handleChange(e, setSelected)} />
-                <label htmlFor={`size-${name}`}>
+                <label htmlFor={`checkbox-${name}`}>
                     {name}
                 </label>
             </div>

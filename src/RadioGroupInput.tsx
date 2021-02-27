@@ -26,13 +26,13 @@ export const RadioGroupInput: FC<IRadioGroupInputProps>
                     {items.map((item: ItemInterface) => (
                         <li key={item.name}>
                             <input
-                                id={`size-${item.name}`}
-                                name={`size-${item.name}`}
+                                id={`radio-${item.name}`}
+                                name={`radio-${item.name}`}
                                 type="radio"
                                 value={item.name}
                                 checked={item.selected}
                                 onChange={(e) => handleChange(e, item.name)} />
-                            <label htmlFor={`size-${item.name}`}>
+                            <label htmlFor={`radio-${item.name}`}>
                                 {item.name}
                             </label>
                         </li>
