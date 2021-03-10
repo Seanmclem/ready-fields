@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 import { ItemInterface } from './common'
 
-export interface IRadioGroupInputProps {
+export interface RadioGroupProps {
     label?: string;
     items: ItemInterface[];
     setItems?: (items: ItemInterface[]) => void;
     setSelectedItem: (itemName: string) => void;
 }
 
-export const RadioGroupInput: FC<IRadioGroupInputProps>
+export const RadioGroupInput: FC<RadioGroupProps>
     = ({ label, items, setItems, setSelectedItem }) => {
         const handleChange = (_event: any, name: string) => {
             const newArray = items.map(item => (name !== item.name ? { ...item, selected: false } : { ...item, selected: true }))
